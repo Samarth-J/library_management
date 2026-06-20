@@ -21,5 +21,4 @@ public class BookController {
         int id = book.getId();
         return bookService.fetchbyId(id);
     }
-
 }
