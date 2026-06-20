@@ -13,4 +13,8 @@ public class BookService {
     public String insertData(Book book){
         return bookDao.insertData(book);
     }
+
+    public Book fetchbyId(int id){
+        return bookDao.fetchbyId(id);
+    }
 }

@@ -3,10 +3,7 @@ package com.example.library_management.controller;
 import com.example.library_management.dto.Book;
 import com.example.library_management.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/books")
@@ -18,4 +15,11 @@ public class BookController {
     public String insertData( @RequestBody Book book){
        return bookService.insertData(book);
     }
+
+    @GetMapping
+    public Book fetchbuId(@RequestBody  Book book){
+        int id = book.getId();
+        return bookService.fetchbyId(id);
+    }
+
 }
