@@ -22,4 +22,3 @@ public class BookDao {
        return b;
     }
 }
-
