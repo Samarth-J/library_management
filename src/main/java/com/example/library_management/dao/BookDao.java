@@ -5,6 +5,7 @@ import com.example.library_management.repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -20,5 +21,9 @@ public class BookDao {
        Optional<Book> ob =bookRepository.findById(id);
        Book b=ob.get();
        return b;
+    }
+
+    public List<Book> fetchall(Book book){
+        return bookRepository.findAll();
     }
 }
