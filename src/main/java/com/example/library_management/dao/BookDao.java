@@ -17,10 +17,9 @@ public class BookDao {
         bookRepository.save(book);
         return "data inserted successfully";
     }
-    public Book fetchbyId(int id){
-       Optional<Book> ob =bookRepository.findById(id);
-       Book b=ob.get();
-       return b;
+    public Optional<Book> fetchbyId(int id){
+       Optional<Book> ob = bookRepository.findById(id);
+       return ob;
     }
 
     public List<Book> fetchall(Book book){

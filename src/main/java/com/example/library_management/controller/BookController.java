@@ -19,8 +19,12 @@ public class BookController {
     }
 
     @GetMapping
-    public Book fetchbuId(@RequestBody  Book book){
-        int id = book.getId();
+    public Object fetchbuId(@RequestParam  int id){
+        return bookService.fetchbyId(id);
+    }
+
+    @GetMapping("/{id}")
+    public Object fetchbyId(@PathVariable int id){
         return bookService.fetchbyId(id);
     }
 
@@ -28,4 +32,6 @@ public class BookController {
     public List<Book> fetchall(@RequestBody Book book){
         return bookService.fetchall(book);
     }
+
+
 }
